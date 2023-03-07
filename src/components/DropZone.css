@@ -2,10 +2,16 @@
     height: calc(var(--size) * 1.5);
     position: relative;
 }
+
 .drop-zone div{
-    width: calc(var(--size) - 2px);
-    height:calc(var(--size) - 2px);
+    width: var(--size);
+    height:var(--size);
     border-radius: 50%;
-    background: red;
-    transform: translateY(500px);
+    display: inline-block;
+    position: absolute;
+}
+.drop-zone .p1 {background-color: var(--p1);}
+.drop-zone .p2 {background-color: var(--p2);}
+.drop-zone .active{
+    transform: translateY(0);
 }
