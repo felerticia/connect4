@@ -25,7 +25,7 @@ const ActiveMarble = ({turn,dropped,setDropped,setTurn}) => {
                 setTimeout(() => {
                     setDropped([
                         ...dropped,
-                        {x:len, y:column || 0, player: turn}
+                        {x : len || 0, y:column || 0, player: turn}
                     ])
                     setTurn(turn === 1 ? 2 : 1)
                 },500)
@@ -43,7 +43,7 @@ const ActiveMarble = ({turn,dropped,setDropped,setTurn}) => {
         return () => document.removeEventListener("keyup", handleKeyDown);
     })
 
-    return <div className={`active p${turn} column-${column||'-'} row-${row||'-'}`} />
+    return <div className={`active p${turn} column-${column||'-'} row-${row===undefined ? '-' : row}`} />
 }
 
 export default ActiveMarble
